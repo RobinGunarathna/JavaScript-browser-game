@@ -6,6 +6,11 @@ Collect meteorites!
 
 Website: https://robingunarathna.github.io/JavaScript-browser-game/
 
+![image](https://user-images.githubusercontent.com/95103308/147036129-8a883c81-445f-4a75-b28c-098699f281b2.png)
+
+![image](https://user-images.githubusercontent.com/95103308/147036290-3d62c063-b181-4458-9869-e60b2961fe78.png)
+
+
 ## purpose of project
 
 Portfolio 2 project for code institute!
@@ -54,10 +59,30 @@ I don't know if the responsiveness is bugging or if i'm doing something wrong ca
 
 ### HTML
 
+![image](https://user-images.githubusercontent.com/95103308/147037420-f8c2e4da-760a-4708-a5b6-0e1d362efbb8.png)
+
 ### CSS
+
+![image](https://user-images.githubusercontent.com/95103308/147037504-d419a8ef-9db1-472b-82ee-94cb9913684a.png)
+
+It's in swedish but no errors!
 
 ### JavaScript
 
+![image](https://user-images.githubusercontent.com/95103308/147037113-acb283f6-a963-4752-a660-26bb965e9357.png)
+
 ### Lighthouse
 
+![image](https://user-images.githubusercontent.com/95103308/147037613-c0547510-da5c-415c-b7bc-932669d33baa.png)
+
+
 ### credits
+YouTube tutorials:
+https://www.youtube.com/watch?v=jl29qI62XPg&t=9s , https://www.youtube.com/watch?v=MwTQtPGuBmo&list=PLYElE_rzEw_sowQGjRdvwh9eAEt62d_Eu&index=15
+
+meteor:
+https://opengameart.org/content/meteor-0
+alien:
+https://www.gamedeveloperstudio.com/graphics/viewgraphic.php?page-name=Alien-enemy-type-4&item=1g5h412t3m7n9g0d7v
+space background:
+https://opengameart.org/content/space-background-01
