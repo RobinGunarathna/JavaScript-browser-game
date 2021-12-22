@@ -14,7 +14,7 @@ const mouse = {
     x: canvas.width / 2,
     y: canvas.height / 2,
     click: false
-}
+};
 canvas.addEventListener('mousedown', function (event) {
     mouse.click = true;
     mouse.x = event.x - canvasPlacement.left;
@@ -22,11 +22,11 @@ canvas.addEventListener('mousedown', function (event) {
 });
 canvas.addEventListener('mouseup', function () {
     mouse.click = false;
-})
+});
 
 // Player
-const alienPlayer = new Image()
-alienPlayer.src = 'assets/images/alien.png'
+const alienPlayer = new Image();
+alienPlayer.src = 'assets/images/alien.png';
 
 class Player {
     constructor() {
@@ -72,7 +72,7 @@ const player = new Player();
 // meteorites
 const meteoriteArray = [];
 const meteoriteImage = new Image();
-meteoriteImage.src = 'assets/images/meteorite.png'
+meteoriteImage.src = 'assets/images/meteorite.png';
 class Meteorite {
     constructor() {
         this.x = Math.random() * canvas.width;
@@ -123,7 +123,7 @@ function handleMeteorites() {
 
 // background
 const backgroundImg = new Image();
-backgroundImg.src = 'assets/images/spacebackground.png'
+backgroundImg.src = 'assets/images/spacebackground.png';
 
 function background() {
     contxt.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height);
@@ -132,7 +132,7 @@ function background() {
 // Animation loop
 function animate() {
     contxt.clearRect(0, 0, canvas.width, canvas.height);
-    background()
+    background();
     handleMeteorites();
     player.update();
     player.draw();
@@ -140,7 +140,7 @@ function animate() {
     gameFrame++;
     requestAnimationFrame(animate);
 }
-animate()
+animate();
 
 //Fix for mouse clicking bug when resizing browser
 window.addEventListener('resize', function () {
