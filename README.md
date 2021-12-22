@@ -49,7 +49,7 @@ I don't know how to fix the issue with devtools i tried with media querys but it
 
 I deployed the website with github-pages.
 
-## Buugs
+## Bugs
 
 Had a bug when you changed the size of the browser that made it so when you clicked on the postion you want to move the alien to instead of moveing the alien to that position it moved him somewere else.
 
