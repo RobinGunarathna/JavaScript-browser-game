@@ -25,7 +25,10 @@ canvas.addEventListener('mouseup', function(){
 })
 
 // Player
-class player {
+const alienPlayer = new Image()
+alienPlayer.src = 'assets/images/alien.png'
+
+class Player {
     constructor(){
         this.x = canvas.width/2;
         this.y = canvas.height/2;
@@ -57,20 +60,71 @@ class player {
         }
         contxt.fillStyle = 'red';
         contxt.beginPath();
-        contxt.arc(this.x, this.y, this.radius, 0, math.PI * 2);
+        contxt.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         contxt.fill();
         contxt.closePath();
+
+        contxt.drawImage(alienPlayer, this.x - 58, this.y - 60, this.spriteWidth/5, this.spriteHeight/5);
     }
 }
-const player = new player();
+const player = new Player();
 
-// popping bubbles
-
+// meteorites
+const meteoriteArray = [];
+class Meteorite {
+    constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + 100 + Math.random() * canvas.height;
+        this.radius = 50;
+        this.speed = Math.random() * 5 + 1;
+        this.distance;
+        this.counted = false;
+    }
+    update(){
+        this.y -= this.speed;
+        const distanceX = this.x - player.x;
+        const distanceY = this.y - player.y;
+        this.distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    }
+    draw(){
+        contxt.fillStyle = 'gray';
+        contxt.beginPath();
+        contxt.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        contxt.fill();
+        contxt.closePath();
+        contxt.stroke();
+    }
+}
+function handleMeteorites(){
+    if (gameFrame % 50 == 0){
+        meteoriteArray.push(new Meteorite());
+        console.log(meteoriteArray.length);
+    }
+    for (let i = 0; i < meteoriteArray.length; i++){
+        meteoriteArray[i].update();
+        meteoriteArray[i].draw();
+        if (meteoriteArray[i].y < 0){
+            meteoriteArray.splice(i, 1);
+        }
+        if (meteoriteArray[i].distance < meteoriteArray[i].radius + player.radius){
+            (console.log('collision'));
+            if (!meteoriteArray[i].counted){
+                score++;
+                meteoriteArray[i].counted = true;
+                meteoriteArray.splice(i, 1);
+            }
+        }
+    }
+}
 
 // Animation loop
 function animate(){
+    contxt.clearRect(0, 0, canvas.width, canvas.height);
+    handleMeteorites();
     player.update();
     player.draw();
+    contxt.fillText('score: ' + score, 10, 50);
+    gameFrame++;
     requestAnimationFrame(animate);
 }
 animate()
