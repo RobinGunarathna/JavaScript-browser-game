@@ -6,7 +6,6 @@ canvas.height = 500;
 
 let score = 0;
 let gameFrame = 0;
-let timeLimit;
 contxt.font = '50px Georgia';
 
 // Mouse interactivity
@@ -120,11 +119,6 @@ function handleMeteorites() {
             }
         }
     }
-}
-
-// timer
-function draw() {
-
 }
 
 // background
